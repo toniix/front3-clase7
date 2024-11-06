@@ -1,17 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './components/Card'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [error, setError] = useState(false)
 
+  const handlerSubmit = (e) => {
+    e.preventDefault()
+    
+  }
   return (
       <div>
-        <h1>Carga de estudiantes</h1>
-        <form >
-
+        <h3>Carga de estudiantes</h3>
+        <form onSubmit={handlerSubmit} >
+          <label>Nombres</label>
+          <input type="text"  />
+          <label>Apellidos</label>
+          <input type="text"  />
+          <label>Edad</label>
+          <input type="text" />
+          <button type="submit">Cargar</button>
         </form>
         <Card />
       </div>
